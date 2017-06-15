@@ -57,14 +57,15 @@ $(document).ready(function() {
  });
 
   $(document).on("click", "#find", function(){ 
+    
     $('.winner').remove();
 
-      var number = Math.floor(Math.random()*name.length);
-      
-      $("#name-list li:nth-child(" + number + ")")
-        .append("<li class='winner'>  winner </li>");
-      $('.winner').css("color", "green");
-      $(".winner").css( "float", "right" );
+    var number = Math.floor(Math.random()*name.length);
+    
+    $("#name-list li:nth-child(" + number + ")")
+      .append("<li class='winner'>  winner </li>");
+    $('.winner').css("color", "green");
+    $(".winner").css( "float", "right" );
       
 
 
