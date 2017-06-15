@@ -8,6 +8,10 @@ class TasksController < ApplicationController
 
   end
 
+  def test
+    debug
+  end
+
   def new
     @task = Task.new
   end

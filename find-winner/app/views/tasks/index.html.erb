@@ -24,14 +24,19 @@
 <h2>name list</h2>
 
 <ul class="tasks" id="name-list">
-  <div class="data"> <% @incomplete_tasks.each do |task| %> </div>
-  	<li task-id="<%= task.id %>" >
- 		<%= task.name %>
- 		<a href="#" id="destroy" class="destroy_link">destroy</a>	
-	</li>
+  
+  <div class="data"> 
 
- 	
- <% end %>
+  	<% @incomplete_tasks.each do |task| %> 
+
+	  	<li task-id="<%= task.id %>" >
+	 		<%= task.name %>
+	 		<a href="#" id="destroy" class="destroy_link">destroy</a>	
+		</li>
+
+	 <% end %>
+	 
+  </div>
 
 </ul>
 

@@ -32,7 +32,7 @@ $(document).ready(function() {
       dataType: "json",
       success: function(result){
 
-        $("#name-list").append('<li task-id="'+ result.task_id + '">' + name + "<a href=\"#\" id=\"destroy\" class=\"destroy_link\">destroy</a></li>");
+        $("#name-list").append('<li task-id="'+ result.task_id + '">' + name + " <a href=\"#\" id=\"destroy\" class=\"destroy_link\">destroy</a></li>");
         $("#first-name").val("");
 
       }
