@@ -1,0 +1,37 @@
+
+
+
+<div class="container">
+	<div class="col-xs-4">
+		<h1>Find Winner</h1>
+	
+
+	<input  type="text" id="first-name" class="form-control"  ><br>
+	
+
+	<div id="add" class="buttons"> 
+		<input type="button" class="btn btn-info" value="ADD"  >
+	</div>
+	
+
+
+	<div id="find" class="buttons"> 
+		<input type="button" class="btn btn-primary"  value="Find Winner">	
+	</div>
+
+
+
+<h2>name list</h2>
+
+<ul class="tasks" id="name-list">
+  <div class="data"> <% @incomplete_tasks.each do |task| %> </div>
+  	<li task-id="<%= task.id %>" >
+ 		<%= task.name %>
+ 		<a href="#" id="destroy" class="destroy_link">destroy</a>	
+	</li>
+
+ 	
+ <% end %>
+
+</ul>
+
