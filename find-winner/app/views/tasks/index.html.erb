@@ -31,7 +31,14 @@
 
 	  	<li task-id="<%= task.id %>" >
 	 		<%= task.name %>
+
 	 		<a href="#" id="destroy" class="destroy_link">destroy</a>	
+
+	 		<%if task.winner %>
+	 		
+		 		<div class='winner'>  winner </div>
+			<% else  %>		 		
+	 		<% end %>
 		</li>
 
 	 <% end %>

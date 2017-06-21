@@ -26,10 +26,22 @@ class TasksController < ApplicationController
     end
   end
 
+
   def update
+
+    Task.all.update_all(winner: false)
+
     @task = Task.find(params[:id])
-    @task.update_attributes!(task_params)
-    redirect_to tasks_url
+    @task.winner = true
+    @task.save
+    
+
+    respond_to do |format|
+      format.html { redirect_to tasks_url }
+      format.json { render json: {task_id: @task.id} }
+    end
+
+
   end
 
   def destroy
@@ -47,7 +59,7 @@ class TasksController < ApplicationController
 
   def task_params
     
-    return params.require(:task).permit(:name, :complete)
+    return params.require(:task).permit(:name, :complete, :winner )
   end
 
 

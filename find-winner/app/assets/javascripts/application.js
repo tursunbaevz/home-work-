@@ -57,19 +57,34 @@ $(document).ready(function() {
  });
 
   $(document).on("click", "#find", function(){ 
-    
+   
     $('.winner').remove();
+    // var names = $("#name-list").getAttribute("task-id")
 
-    var number = Math.floor(Math.random()*name.length);
+
+
+    var number = Math.floor(Math.random() * $("#name-list li").length);
     
-    $("#name-list li:nth-child(" + number + ")")
-      .append("<li class='winner'>  winner </li>");
-    $('.winner').css("color", "green");
-    $(".winner").css( "float", "right" );
+    var winning_elm = $("#name-list li:eq(" + number + ")")
+
+    winning_elm.append("<div class='winner'>  winner </div>");
+    
+    var el = winning_elm.attr('task-id');
       
+    $.ajax({
+      type: "PUT",
+      dataType: "json",
+      url: '/tasks/' + el,
+      success: function() {
+
+      }
+     });
 
 
   });
+
+
+   
 });
 
 

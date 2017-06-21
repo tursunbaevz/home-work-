@@ -12,7 +12,10 @@
  *= require_tree .
  */
 
-
+.winner {
+	color: green;
+	float: right;
+}
 
 #add{
 	position:absolute;
